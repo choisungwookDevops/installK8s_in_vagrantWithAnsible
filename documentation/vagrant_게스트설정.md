@@ -5,15 +5,15 @@
 # <br>
 
 # 1. 네트워크 <a name="네트워크"></a>
-* NAT와 host-only 인터페이스 존재
+* NAT와 internal 인터페이스 존재
   
 ![](../imgs/guest_nat_interface.png)
 <br>NAT인터페이스
 
 <br>
 
-![](../imgs/guest_bridge.png)
-<br>host-only  인터페이스
+![](../imgs/guest_internal_interface.png)
+<br>internal 인터페이스
 
 <br>
 
