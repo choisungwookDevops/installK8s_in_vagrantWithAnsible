@@ -14,7 +14,7 @@ vagrant+Ansible환경에서 kubernetes설치
 <br>
 
 # 주의사항
-* 윈도우 설치 불가 -> 윈도우용 ansible은 node관리 불가
+* ansible 윈도우 설치 불가 -> 윈도우용 ansible은 node관리 불가
 
 <br>
 
