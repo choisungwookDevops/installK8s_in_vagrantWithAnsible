@@ -23,6 +23,12 @@ N = 1 <--수정
             이 부분에 IP추가 또는 수정
 ```
 
+## 1.3 수정한 yml 실행
+```
+vagrant destroy -f ; 기존의 모든 vagrant 삭제
+vagrant up
+```
+
 <br>
 
 # 2. 마스터 노드의 IP를 수정하는 경우
@@ -56,4 +62,10 @@ MASTER_IP = "172.16.10.10" <-- 수정
 ```yaml
 - name: Initialize the Kubernetes cluster using kubeadm
   command: kubeadm init --apiserver-advertise-address="172.16.10.10" --apiserver-cert-extra-sans="172.16.10.10" --node-name master --pod-network-cidr=192.168.0.0/16
+```
+
+## 2.4 수정한 yml 실행
+```
+vagrant destroy -f ; 기존의 모든 vagrant 삭제
+vagrant up
 ```
