@@ -1,5 +1,5 @@
 # 1. 개요
-* vagrant&Ansible환경에서 kubernetes설치
+* 윈도우 환경에서 vagrant&Ansible을 이용하여 kubernetes설치
 > 한계: IP를 수정하거나 워커노드를 수정하면 초기화 후 다시 실행
 
 ![](imgs/architecture.png)
@@ -28,6 +28,7 @@
 <br>
 
 # 3. 실행
+> 실행환경: 윈도우 10
 ## 3.1 실행 전 설치 소프트웨어
 * virtualbox
 * vagrant
