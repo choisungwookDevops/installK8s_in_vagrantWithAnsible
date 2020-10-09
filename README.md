@@ -23,3 +23,4 @@ vagrant+Ansible환경에서 kubernetes설치
 * [2] vagrant+ansible 설치 블로그: https://daddyprogrammer.org/post/7369/ansible-vagrant/
 * [3] ansible 스크립트 파일: https://gist.github.com/hi1280/69a76141450ff047764801a3d3db05b4
 * [4] 우분투에 ansible 설치설명: https://dev-yakuza.github.io/ko/environment/install-ansible/
+* [5] vargrant provision.file: https://www.vagrantup.com/docs/provisioning/file
