@@ -35,6 +35,7 @@ vagrant up
 1. [vargrant 게스트 원격접속](documentation/vagrant_ssh원격접속.md)
 2. [VM게스트 사양 등 설정](documentation/vagrant_게스트설정.md)
 3. [IP수정, 워커노드 추가](documentation/마스터&워커노드_IP수정.md)
+4. [kubelet ip수정](documentation/kubelet_ip수정.md)
 
 <br>
 
@@ -45,3 +46,4 @@ vagrant up
 * [4] 우분투에 ansible 설치설명: https://dev-yakuza.github.io/ko/environment/install-ansible/
 * [5] vargrant provision.file: https://www.vagrantup.com/docs/provisioning/file
 * [6] vagrant network 설정: https://www.vagrantup.com/docs/providers/virtualbox/networking
+* [7] kubelet ip수정: https://github.com/kubernetes/kubeadm/issues/203
