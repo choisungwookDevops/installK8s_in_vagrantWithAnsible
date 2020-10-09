@@ -8,6 +8,7 @@
 <br>
 
 # 2. 필요사양
+> 현재 총 4개 VM이 기본 실행(ansible 서버, 쿠버네티스 마스터 노드 1개, 쿠버네티스 워커노드 2개)
 ## 2.1 권장사양
 * 램: 16GB 이상
 * CPU: 코어 4개 이상
@@ -34,8 +35,6 @@ vagrant up
 1. [vargrant 게스트 원격접속](documentation/vagrant_ssh원격접속.md)
 2. [VM게스트 사양 등 설정](documentation/vagrant_게스트설정.md)
 3. [IP수정, 워커노드 추가](documentation/마스터&워커노드_IP수정.md)
-
-<br>
 
 <br>
 
