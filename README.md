@@ -7,6 +7,11 @@
 
 <br>
 
+![](imgs/실행결과.png)
+<br>실행결과
+
+<br>
+
 # 2. 필요사양
 > 현재 총 4개 VM이 기본 실행(ansible 서버, 쿠버네티스 마스터 노드 1개, 쿠버네티스 워커노드 2개)
 ## 2.1 권장사양
@@ -36,6 +41,9 @@ vagrant up
 2. [VM게스트 사양 등 설정](documentation/vagrant_게스트설정.md)
 3. [IP수정, 워커노드 추가](documentation/마스터&워커노드_IP수정.md)
 4. [kubelet ip수정](documentation/kubelet_ip수정.md)
+5. [helloworld실행](documentation/helloworld.md)   
+![](./imgs/helloworld_pod확인.png)
+<br> node1, node2에 pod 생성확인
 
 <br>
 
