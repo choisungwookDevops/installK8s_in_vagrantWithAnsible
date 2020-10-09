@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
         v.cpus = 2
     end
 
-    # 마스터 노드
+    # # 마스터 노드
     config.vm.define "master" do |master|
         master.vm.box = IMAGE_NAME
         master.vm.network "private_network", ip: MASTER_IP, virtualbox__intnet: "kubernetes"
@@ -50,8 +50,11 @@ Vagrant.configure("2") do |config|
         # ssh 설정
         node.vm.provision "file", source: "./ansible_playbooks/configure_ssh.yml", destination: "configure_ssh.yml"
         node.vm.provision "shell", inline: "ansible-playbook configure_ssh.yml", privileged: false
-        # 설치 스크립트
-        node.vm.provision "file", source: "./ansible_playbooks/kubernetes_masternode_install.yml", destination: "install.yml"
-        node.vm.provision "shell", inline: "ansible-playbook install.yml", privileged: false
+        # 마스터노드 설치 스크립트
+        node.vm.provision "file", source: "./ansible_playbooks/kubernetes_masternode_install.yml", destination: "install_masternode.yml"
+        node.vm.provision "shell", inline: "ansible-playbook install_masternode.yml", privileged: false
+        # 워커노트 생성 및 설치
+        node.vm.provision "file", source: "./ansible_playbooks/kubernetes_workernode_install.yml", destination: "install_workernode.yml"
+        node.vm.provision "shell", inline: "ansible-playbook install_workernode.yml", privileged: false
     end
 end
