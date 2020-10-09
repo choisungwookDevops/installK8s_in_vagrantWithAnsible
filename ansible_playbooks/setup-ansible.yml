@@ -10,6 +10,10 @@
         block: |
             [master]
             172.16.10.10
+            [node1]
+            172.16.10.11
+            [node2]
+            172.16.10.12
     - name: Configure Bashrc
       lineinfile:
         path: /home/vagrant/.bashrc
