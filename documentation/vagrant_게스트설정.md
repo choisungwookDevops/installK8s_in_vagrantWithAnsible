@@ -8,12 +8,12 @@
 * NAT와 bridge 인터페이스 존재
   
 ![](../imgs/guest_nat_interface.png)
-NAT인터페이스
+<br>NAT인터페이스
 
 <br>
 
 ![](../imgs/guest_bridge.png)
-bridge 인터페이스
+<br>bridge 인터페이스
 
 <br>
 
