@@ -1,6 +1,6 @@
 * 마스터노드 접속
 ```sh
-vagrant ssh k8s-master
+vagrant ssh master
 ```
 
 <br>
