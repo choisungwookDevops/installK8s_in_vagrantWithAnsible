@@ -78,6 +78,17 @@
           - kubeadm 
           - kubectl
 
+    - name: Configure node ip
+      lineinfile:
+        create: yes
+        path: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+        line: Environment="KUBELET_EXTRA_ARGS=--node-ip={{ ansible_host }}"
+    - name: Restart kubelet
+      service:
+        name: kubelet
+        daemon_reload: yes
+        state: restarted
+
     - name: Initialize the Kubernetes cluster using kubeadm
       command: kubeadm init --apiserver-advertise-address="172.16.10.10" --apiserver-cert-extra-sans="172.16.10.10" --node-name master --pod-network-cidr=192.168.0.0/16
 

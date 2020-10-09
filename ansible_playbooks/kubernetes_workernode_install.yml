@@ -78,6 +78,18 @@
           - kubeadm 
           - kubectl
    
+    - name: Configure node ip
+      lineinfile:
+        create: yes
+        path: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+        line: Environment="KUBELET_EXTRA_ARGS=--node-ip={{ ansible_host }}"
+        
+    - name: Restart kubelet
+      service:
+        name: kubelet
+        daemon_reload: yes
+        state: restarted
+
     - name: Copy the join command to server location
       copy: src=join-command dest=/tmp/join-command.sh mode=0777
 
