@@ -5,7 +5,7 @@
 # <br>
 
 # 1. 네트워크 <a name="네트워크"></a>
-* NAT와 bridge 인터페이스 존재
+* NAT와 host-only 인터페이스 존재
   
 ![](../imgs/guest_nat_interface.png)
 <br>NAT인터페이스
@@ -13,7 +13,7 @@
 <br>
 
 ![](../imgs/guest_bridge.png)
-<br>bridge 인터페이스
+<br>host-only  인터페이스
 
 <br>
 
