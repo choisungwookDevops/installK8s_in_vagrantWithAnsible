@@ -13,8 +13,8 @@ vagrant+Ansible환경에서 kubernetes설치
 
 <br>
 
-# 3. 주의사항
-* ansible 윈도우 설치 불가 -> 윈도우용 ansible은 node관리 불가
+# 3. 문서 목차
+
 
 <br>
 
@@ -24,3 +24,4 @@ vagrant+Ansible환경에서 kubernetes설치
 * [3] ansible 스크립트 파일: https://gist.github.com/hi1280/69a76141450ff047764801a3d3db05b4
 * [4] 우분투에 ansible 설치설명: https://dev-yakuza.github.io/ko/environment/install-ansible/
 * [5] vargrant provision.file: https://www.vagrantup.com/docs/provisioning/file
+* [6] vagrant network 설정: https://www.vagrantup.com/docs/providers/virtualbox/networking
