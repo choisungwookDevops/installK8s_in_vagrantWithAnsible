@@ -4,7 +4,7 @@ MASTER_IP = "172.16.10.10"
 NODE_IP = "172.16.10."
 ANSIBLE_IP = "172.16.10.240"
 # 워커 노드 수
-N = 1
+N = 2
 
 Vagrant.configure("2") do |config|
     config.ssh.insert_key = false
@@ -25,13 +25,13 @@ Vagrant.configure("2") do |config|
     end
 
     # 워커 노드
-    # (1..N).each do |i|
-    #     config.vm.define "node-#{i}" do |node|
-    #         node.vm.box = IMAGE_NAME
-    #         node.vm.network "private_network", ip: NODE_IP + #{i + 10}"
-    #         node.vm.hostname = "node-#{i}"           
-    #     end
-    # end
+    (1..N).each do |i|
+        config.vm.define "node-#{i}" do |node|
+            node.vm.box = IMAGE_NAME
+            node.vm.network "private_network", ip: NODE_IP + "#{i + 10}", virtualbox__intnet: "kubernetes"
+            node.vm.hostname = "node-#{i}"           
+        end
+    end
 
     # ansible 서버
     config.vm.define "ansible-server" do |node|
