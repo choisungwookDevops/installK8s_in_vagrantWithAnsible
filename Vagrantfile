@@ -1,5 +1,8 @@
 # 우분투 이미지
 IMAGE_NAME = "bento/ubuntu-16.04"
+MASTER_IP = "172.16.10.10"
+NODE_IP = "172.16.10."
+ANSIBLE_IP = "172.16.10.240"
 # 워커 노드 수
 N = 1
 
@@ -17,7 +20,7 @@ Vagrant.configure("2") do |config|
     # 마스터 노드
     config.vm.define "master" do |master|
         master.vm.box = IMAGE_NAME
-        master.vm.network "private_network", ip: "192.168.50.10"
+        master.vm.network "private_network", ip: MASTER_IP, virtualbox__intnet: "kubernetes"
         master.vm.hostname = "master"
     end
 
@@ -25,7 +28,7 @@ Vagrant.configure("2") do |config|
     # (1..N).each do |i|
     #     config.vm.define "node-#{i}" do |node|
     #         node.vm.box = IMAGE_NAME
-    #         node.vm.network "private_network", ip: "192.168.50.#{i + 10}"
+    #         node.vm.network "private_network", ip: NODE_IP + #{i + 10}"
     #         node.vm.hostname = "node-#{i}"           
     #     end
     # end
@@ -33,7 +36,7 @@ Vagrant.configure("2") do |config|
     # ansible 서버
     config.vm.define "ansible-server" do |node|
         node.vm.box = IMAGE_NAME
-        node.vm.network "private_network", ip: "192.168.50.240"
+        node.vm.network "private_network", ip: ANSIBLE_IP, virtualbox__intnet: "kubernetes"
         node.vm.hostname = "ansible-server"           
         node.vm.provision "shell", inline: <<-SHELL
             sudo apt-get update
@@ -47,5 +50,8 @@ Vagrant.configure("2") do |config|
         # ssh 설정
         node.vm.provision "file", source: "./ansible_playbooks/configure_ssh.yml", destination: "configure_ssh.yml"
         node.vm.provision "shell", inline: "ansible-playbook configure_ssh.yml", privileged: false
+        # 설치 스크립트
+        node.vm.provision "file", source: "./ansible_playbooks/kubernetes_masternode_install.yml", destination: "install.yml"
+        node.vm.provision "shell", inline: "ansible-playbook install.yml", privileged: false
     end
 end

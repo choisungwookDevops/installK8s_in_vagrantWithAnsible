@@ -9,7 +9,7 @@
         path: /etc/ansible/hosts
         block: |
             [master]
-            192.168.50.10            
+            172.16.10.10
     - name: Configure Bashrc
       lineinfile:
         path: /home/vagrant/.bashrc
